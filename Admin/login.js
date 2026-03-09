@@ -15,6 +15,7 @@ const login = async (req, res) => {
       }
 
       let Password = await bcrypt.compare(password, user.password);
+
       if (
         user &&
         Password &&
