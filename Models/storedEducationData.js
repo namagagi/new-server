@@ -1,0 +1,46 @@
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+
+const itemSchema = new Schema({
+  item: { type: String, required: true },
+  quantity: { type: Number, required: true, min: 0 },
+  amount: { type: Number, required: true, min: 0 },
+  totalAmount: { type: Number, required: true, min: 0 },
+});
+
+const storedEducationSchema = new Schema({
+  projectId: { type: String, required: true },
+  schoolName: { type: String, required: false },
+  projectSector: { type: String, required: true },
+  village: { type: String, required: true },
+  taluk: { type: String, required: true },
+  zone: { type: String, required: true },
+  district: { type: String, required: false },
+  fundRaiserName: { type: String, required: true },
+  contact: { type: String, required: true },
+  email: { type: String, required: true },
+  edate: { type: String, required: false },
+  totalAmount: { type: Number, required: true },
+  description: { type: String, required: true },
+  accountNumber: { type: String, required: false },
+  ifscCode: { type: String, required: false },
+  upiNumber: { type: String, required: false },
+  recommended: { type: String, required: false },
+  projectName: { type: String, required: false },
+  landDetails: { type: String, required: false },
+  totalPopulation: { type: Number, required: false },
+  projectType: { type: String, required: true },
+  imagePath: { type: [String], required: false, default: [] },
+  accessID: { type: String, required: true },
+  addedBy: { type: String, required: true },
+  items: [itemSchema],
+  createdAt: { type: Date, default: Date.now },
+});
+
+const Education = mongoose.model(
+  "storedEducationData",
+  storedEducationSchema,
+  "storedEducationData"
+);
+
+module.exports = Education;
