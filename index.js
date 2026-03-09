@@ -28,7 +28,7 @@ app.use("/invoices",express.static(path.join(__dirname, "invoices")));
 app.use('/certificates', express.static(path.join(__dirname, 'certificates')));
 
 // Define allowed origins
-const allowedOrigins = ["https://cf.admin.dakshinakannada.org", "https://cf.dakshinakannada.org"];
+const allowedOrigins = ["https://new-client-theta.vercel.app", "https://cf.dakshinakannada.org"];
 
 // CORS options to handle multiple origins
 const corsOptions = {
@@ -68,7 +68,7 @@ app.post("/logout",require("./jwt_authoriser"), require("./Admin/logout"));
 app.use("/admin", require("./jwt_authoriser"), require("./Routes/admin"));
 app.use("/operator", require("./jwt_authoriser"), require("./Routes/operator"));
 app.use("/users", require("./Routes/user"));
-app.use("/payment", require("./Routes/razorpay"));
+// app.use("/payment", require("./Routes/razorpay"));
 
 // Start the server
 app.listen(port, () => {
