@@ -28,7 +28,7 @@ app.use("/invoices",express.static(path.join(__dirname, "invoices")));
 app.use('/certificates', express.static(path.join(__dirname, 'certificates')));
 
 // Define allowed origins
-const allowedOrigins = ["https://new-client-theta.vercel.app", "https://cf.dakshinakannada.org"];
+const allowedOrigins = ["https://new-client-theta.vercel.app", "https://new-admin-9xtd.vercel.app"];
 
 // CORS options to handle multiple origins
 const corsOptions = {
